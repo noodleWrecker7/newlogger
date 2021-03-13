@@ -1,6 +1,6 @@
 {
   "name": "@noodlewrecker7/logger",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Teeny Tiny logger for nicer logging",
   "main": "src/Logger.js",
   "types": "./build/src/Logger.d.ts",
