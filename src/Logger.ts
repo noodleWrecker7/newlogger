@@ -18,7 +18,7 @@ export module logger {
       if (Logger.level > Logger.Levels.INFO) {
         return
       }
-      let str = '[INFO] ' + input.toString()
+      let str = '[INFO] ' + JSON.stringify(input)
       console.log(Logger.createString(str, '\x1b[37m'))
     }
 
@@ -26,7 +26,7 @@ export module logger {
       if (Logger.level > Logger.Levels.DEBUG) {
         return
       }
-      let str = '[DEBUG] ' + input.toString()
+      let str = '[DEBUG] ' + JSON.stringify(input)
       console.log(Logger.createString(str, '\x1b[35m'))
     }
 
@@ -34,7 +34,7 @@ export module logger {
       if (Logger.level > Logger.Levels.TRACE) {
         return
       }
-      let str = '[TRACE] ' + input.toString()
+      let str = '[TRACE] ' + JSON.stringify(input)
       console.trace(Logger.createString(str, '\x1b[32m'))
     }
 
@@ -42,7 +42,7 @@ export module logger {
       if (Logger.level > Logger.Levels.WARN) {
         return
       }
-      let str = '[WARN] ' + input.toString()
+      let str = '[WARN] ' + JSON.stringify(input)
       console.log(Logger.createString(str, '\x1b[33m'))
     }
 
@@ -50,7 +50,7 @@ export module logger {
       if (Logger.level > Logger.Levels.ERROR) {
         return
       }
-      let str = '[Error] ' + input.toString()
+      let str = '[Error] ' + JSON.stringify(input)
       console.error(Logger.createString(str, '\x1b[31m'))
     }
 
@@ -58,7 +58,7 @@ export module logger {
       if (Logger.level > Logger.Levels.TIME) {
         return
       }
-      let str = '\x1b[34m[TIMED] ' + input.toString() + '\x1b[0m'
+      let str = '\x1b[34m[TIMED] ' + JSON.stringify(input) + '\x1b[0m'
       console.time(str)
     }
 
@@ -66,7 +66,7 @@ export module logger {
       if (Logger.level > Logger.Levels.TIME) {
         return
       }
-      let str = '\x1b[34m[TIMED] ' + input.toString() + '\x1b[0m'
+      let str = '\x1b[34m[TIMED] ' + JSON.stringify(input) + '\x1b[0m'
       console.timeEnd(str)
     }
 
