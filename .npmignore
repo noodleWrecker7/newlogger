@@ -7,3 +7,4 @@ test-src/
 .prettierrc
 .eslintrc.js
 tsconfig.json
+src/Logger.ts
