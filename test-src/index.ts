@@ -10,7 +10,7 @@ describe('Tests', function () {
     Logger.error('Error')
     Logger.debug('Debug')
     Logger.trace('Tracing time')
-    Logger.debug({ x: 5 })
+    Logger.debug('' + JSON.stringify({ x: 5 }))
     Logger.timeEnd('Timing')
     done()
   })
