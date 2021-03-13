@@ -18,7 +18,7 @@ export module logger {
       if (Logger.level > Logger.Levels.INFO) {
         return
       }
-      let str = '[INFO] ' + input
+      let str = '[INFO] ' + input.toString()
       console.log(Logger.createString(str, '\x1b[37m'))
     }
 
@@ -26,7 +26,7 @@ export module logger {
       if (Logger.level > Logger.Levels.DEBUG) {
         return
       }
-      let str = '[DEBUG] ' + input
+      let str = '[DEBUG] ' + input.toString()
       console.log(Logger.createString(str, '\x1b[35m'))
     }
 
@@ -34,7 +34,7 @@ export module logger {
       if (Logger.level > Logger.Levels.TRACE) {
         return
       }
-      let str = '[TRACE] ' + input
+      let str = '[TRACE] ' + input.toString()
       console.trace(Logger.createString(str, '\x1b[32m'))
     }
 
@@ -42,7 +42,7 @@ export module logger {
       if (Logger.level > Logger.Levels.WARN) {
         return
       }
-      let str = '[WARN] ' + input
+      let str = '[WARN] ' + input.toString()
       console.log(Logger.createString(str, '\x1b[33m'))
     }
 
@@ -50,7 +50,7 @@ export module logger {
       if (Logger.level > Logger.Levels.ERROR) {
         return
       }
-      let str = '[Error] ' + input
+      let str = '[Error] ' + input.toString()
       console.error(Logger.createString(str, '\x1b[31m'))
     }
 
@@ -58,12 +58,15 @@ export module logger {
       if (Logger.level > Logger.Levels.TIME) {
         return
       }
-      let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
+      let str = '\x1b[34m[TIMED] ' + input.toString() + '\x1b[0m'
       console.time(str)
     }
 
     public static timeEnd(input: string) {
-      let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
+      if (Logger.level > Logger.Levels.TIME) {
+        return
+      }
+      let str = '\x1b[34m[TIMED] ' + input.toString() + '\x1b[0m'
       console.timeEnd(str)
     }
 
