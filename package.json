@@ -6,6 +6,9 @@
   "dependencies": {
     "typescript": "^4.2.3"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/mocha": "^8.2.1",
     "chai": "^4.3.4",
