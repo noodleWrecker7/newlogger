@@ -5,9 +5,7 @@
   "main": "src/Logger.js",
   "types": "src/Logger.d.ts",
   "typings": "./src/Logger.d.ts",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "files": [
     "/src"
   ],

@@ -14,7 +14,7 @@ export module logger {
 
     private static level: LogLevel = Logger.Levels.DEBUG
 
-    public static info(input: string) {
+    public static info(input: any) {
       if (Logger.level > Logger.Levels.INFO) {
         return
       }
@@ -22,7 +22,7 @@ export module logger {
       console.log(Logger.createString(str, '\x1b[37m'))
     }
 
-    public static debug(input: string) {
+    public static debug(input: any) {
       if (Logger.level > Logger.Levels.DEBUG) {
         return
       }
@@ -30,7 +30,7 @@ export module logger {
       console.log(Logger.createString(str, '\x1b[35m'))
     }
 
-    public static trace(input: string) {
+    public static trace(input: any) {
       if (Logger.level > Logger.Levels.TRACE) {
         return
       }
@@ -38,7 +38,7 @@ export module logger {
       console.trace(Logger.createString(str, '\x1b[32m'))
     }
 
-    public static warn(input: string) {
+    public static warn(input: any) {
       if (Logger.level > Logger.Levels.WARN) {
         return
       }
@@ -46,7 +46,7 @@ export module logger {
       console.log(Logger.createString(str, '\x1b[33m'))
     }
 
-    public static error(input: string) {
+    public static error(input: any) {
       if (Logger.level > Logger.Levels.ERROR) {
         return
       }
