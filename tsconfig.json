@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "include": ["src/*", "test-src/*"],
+  "exclude": ["node_modules"],
+  "typeAcquisition": {
+    "enable": false
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "src/*", "test-src/*"]
+    },
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "diagnostics": true,
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "pretty": true,
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es6", "dom"]
+  }
+}

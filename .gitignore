@@ -1,0 +1,9 @@
+# Project exclude paths
+/node_modules/
+/src/Logger.d.ts
+/src/Logger.js
+/src/Logger.js.map
+/test-src/index.d.ts
+/test-src/index.js
+/test-src/index.js.map
+.idea

@@ -1,0 +1,27 @@
+{
+  "name": "newlogger",
+  "version": "1.0.0",
+  "description": "Teeny Tiny logger for nicer logging",
+  "main": "src/index.js",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2",
+    "chai": "^4.3.4",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "test": "mocha test-src",
+    "compile": "tsc",
+    "lint": "eslint --fix",
+    "format": "prettier --write .",
+    "build": "npm run format && npm run lint && npm run compile && npm run test"
+  },
+  "author": "",
+  "license": "ISC"
+}
