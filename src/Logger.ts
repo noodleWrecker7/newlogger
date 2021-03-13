@@ -8,7 +8,7 @@ enum LogLevel {
   OFF = 99,
 }
 
-export module newlogger {
+export module logger {
   export class Logger {
     public static Levels = LogLevel
 

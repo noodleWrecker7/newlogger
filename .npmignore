@@ -8,3 +8,4 @@ test-src/
 .eslintrc.js
 tsconfig.json
 src/Logger.ts
+tsconfig.tsbuildinfo

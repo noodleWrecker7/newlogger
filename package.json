@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Teeny Tiny logger for nicer logging",
   "main": "src/Logger.js",
-  "types": "./build/src/Logger.d.ts",
+  "types": "./src/Logger.d.ts",
   "dependencies": {
     "typescript": "^4.2.3"
   },
