@@ -8,73 +8,75 @@ enum LogLevel {
   OFF = 99,
 }
 
-module.exports.Logger = class Logger {
-  public static Levels = LogLevel
+export module newlogger {
+  export class Logger {
+    public static Levels = LogLevel
 
-  private static level: LogLevel = Logger.Levels.DEBUG
+    private static level: LogLevel = Logger.Levels.DEBUG
 
-  public static info(input: string) {
-    if (Logger.level > Logger.Levels.INFO) {
-      return
+    public static info(input: string) {
+      if (Logger.level > Logger.Levels.INFO) {
+        return
+      }
+      let str = '[INFO] ' + input
+      console.log(Logger.createString(str, '\x1b[37m'))
     }
-    let str = '[INFO] ' + input
-    console.log(Logger.createString(str, '\x1b[37m'))
-  }
 
-  public static debug(input: string) {
-    if (Logger.level > Logger.Levels.DEBUG) {
-      return
+    public static debug(input: string) {
+      if (Logger.level > Logger.Levels.DEBUG) {
+        return
+      }
+      let str = '[DEBUG] ' + input
+      console.log(Logger.createString(str, '\x1b[35m'))
     }
-    let str = '[DEBUG] ' + input
-    console.log(Logger.createString(str, '\x1b[35m'))
-  }
 
-  public static trace(input: string) {
-    if (Logger.level > Logger.Levels.TRACE) {
-      return
+    public static trace(input: string) {
+      if (Logger.level > Logger.Levels.TRACE) {
+        return
+      }
+      let str = '[TRACE] ' + input
+      console.trace(Logger.createString(str, '\x1b[32m'))
     }
-    let str = '[TRACE] ' + input
-    console.trace(Logger.createString(str, '\x1b[32m'))
-  }
 
-  public static warn(input: string) {
-    if (Logger.level > Logger.Levels.WARN) {
-      return
+    public static warn(input: string) {
+      if (Logger.level > Logger.Levels.WARN) {
+        return
+      }
+      let str = '[WARN] ' + input
+      console.log(Logger.createString(str, '\x1b[33m'))
     }
-    let str = '[WARN] ' + input
-    console.log(Logger.createString(str, '\x1b[33m'))
-  }
 
-  public static error(input: string) {
-    if (Logger.level > Logger.Levels.ERROR) {
-      return
+    public static error(input: string) {
+      if (Logger.level > Logger.Levels.ERROR) {
+        return
+      }
+      let str = '[Error] ' + input
+      console.error(Logger.createString(str, '\x1b[31m'))
     }
-    let str = '[Error] ' + input
-    console.error(Logger.createString(str, '\x1b[31m'))
-  }
 
-  public static time(input: string) {
-    if (Logger.level > Logger.Levels.TIME) {
-      return
+    public static time(input: string) {
+      if (Logger.level > Logger.Levels.TIME) {
+        return
+      }
+      let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
+      console.time(str)
     }
-    let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
-    console.time(str)
-  }
 
-  public static timeEnd(input: string) {
-    let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
-    console.timeEnd(str)
-  }
+    public static timeEnd(input: string) {
+      let str = '\x1b[34m[TIMED] ' + input + '\x1b[0m'
+      console.timeEnd(str)
+    }
 
-  private static createString(str: string, color: string) {
-    return color + Logger.getTimeStr() + str + '\x1b[0m'
-  }
+    private static createString(str: string, color: string) {
+      return color + Logger.getTimeStr() + str + '\x1b[0m'
+    }
 
-  static setLevel(lvl: LogLevel) {
-    Logger.level = lvl
-  }
+    static setLevel(lvl: LogLevel) {
+      Logger.level = lvl
+    }
 
-  private static getTimeStr() {
-    return '[' + new Date().toTimeString().substr(0, 8) + ']'
+    private static getTimeStr() {
+      return '[' + new Date().toTimeString().substr(0, 8) + ']'
+    }
   }
 }

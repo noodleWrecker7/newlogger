@@ -1,4 +1,5 @@
-import { Logger } from '../src/Logger'
+import { newlogger } from '../src/Logger'
+import Logger = newlogger.Logger
 
 describe('Tests', function () {
   it('works', (done) => {

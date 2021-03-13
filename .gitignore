@@ -7,3 +7,4 @@
 /test-src/index.js
 /test-src/index.js.map
 .idea
+/tsconfig.tsbuildinfo
