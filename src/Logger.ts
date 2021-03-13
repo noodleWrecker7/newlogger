@@ -30,7 +30,7 @@ export module logger {
       console.log(Logger.createString(str, '\x1b[35m'))
     }
 
-    public static trace(input: any) {
+    public static trace(input?: any) {
       if (Logger.level > Logger.Levels.TRACE) {
         return
       }
