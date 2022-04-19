@@ -30,8 +30,8 @@
   "scripts": {
     "test": "npm run build && mocha test-src",
     "compile": "tsc",
-    "lint": "eslint --fix",
-    "format": "prettier --write .",
+    "lint": "eslint --fix ./src",
+    "format": "prettier --write ./src",
     "build": "npm run format && npm run lint && npm run compile"
   },
   "author": "",
