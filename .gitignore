@@ -8,3 +8,5 @@
 /test-src/index.js.map
 .idea
 /tsconfig.tsbuildinfo
+/coverage
+/.nyc_output

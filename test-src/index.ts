@@ -1,9 +1,8 @@
-import { logger } from '../src/Logger'
-import Logger = logger.Logger
+import Logger, { LogLevel } from '../src/Logger'
 
 describe('Tests', function () {
   it('works', (done) => {
-    Logger.setLevel(Logger.Levels.TRACE)
+    Logger.setLevel(LogLevel.TRACE)
     Logger.time('Timing')
     Logger.info('Info')
     Logger.warn('Warning')
